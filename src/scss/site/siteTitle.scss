@@ -1,0 +1,8 @@
+.SiteTitle{
+    margin: 32px 0;
+    &-title{
+        margin-top: 0;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 16px;
+    }
+}

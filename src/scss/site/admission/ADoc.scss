@@ -1,0 +1,31 @@
+.ADoc{
+    padding: 2rem;
+    background: $body-bg-alt;
+    border: 1px solid $border-color;
+
+    &-header{
+        text-align: center;
+        border-bottom: 2px solid $text-color;
+        margin-bottom: 32px;
+        margin-top: 32px;
+        padding-bottom: 16px;
+    }
+    &-title{
+        font-size: 18px;
+        margin: 0;
+        span{
+            display: block;
+        }
+    }
+    &-subTitle{
+
+    }
+    &-desc{
+        color: $text-color-alt;
+    }
+    &-contentTitle{
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+}

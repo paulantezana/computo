@@ -2,12 +2,16 @@ extends ../layout
 
 block content
     include blocks/menu
-    .Container.MarginT16
-        .Card
-            .SiteHeader
-                h1.SiteHeader-title= results.data.name
-                .SiteHeader-subTitle Resultados de exámenes de admisión
+    .Container.MarginT32.MarginB32
+        .ADoc
+            .ADoc-header
+                h1.ADoc-title INSTITUTO DE EDUCACION SUPERIOR TECNOLOGICO
+                    span SEDNA
+                .ADoc-desc runbo a la acreditacion
+                if results.success
+                    .ADoc-contentTitle= results.data.name
             if results.success
+                .ADoc-content
                 table
                     thead
                         tr

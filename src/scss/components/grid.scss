@@ -12,6 +12,7 @@
     display: grid;
     grid-template-columns: 100%;
     grid-column-gap: $gap;
+    grid-row-gap: $gap;
 
     // @for $i from 0 through 4 {
     //     &.gap-#{$i} {
