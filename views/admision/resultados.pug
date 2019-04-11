@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    include blocks/menu
+    .Container.MarginT16
+        .Card
+            .SiteHeader
+                h1.SiteHeader-title Resultados de exámenes de admisión
+                .SiteHeader-subTitle Resultados anteriores
+            ol
+                each item, index in results.data
+                    li
+                        a(href="/admision/resultados/"+item.id)= item.name

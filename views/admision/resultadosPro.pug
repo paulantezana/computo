@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    include blocks/menu
+    .Container.MarginT16
+        .Card
+            if results.success
+                .SiteHeader
+                    h1.SiteHeader-title= results.data.name
+                    .SiteHeader-subTitle Programas de estudio
+                ol
+                    each item, index in results.data.content
+                        li
+                            a(href="/admision/resultados/" + results.data.id + "/"+item.id)= item.name
+            else
+                p= results.message

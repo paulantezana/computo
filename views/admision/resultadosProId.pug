@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    include blocks/menu
+    .Container.MarginT16
+        .Card
+            .SiteHeader
+                h1.SiteHeader-title= results.data.name
+                .SiteHeader-subTitle Resultados de exámenes de admisión
+            if results.success
+                table
+                    thead
+                        tr
+                            th Nro
+                            th Dni
+                            th Apellidos y Nombres
+                            th Nota
+                    tbody
+                        each item, index in results.data.content
+                            tr
+                                td= index + 1
+                                td= item.dni
+                                td= item.full_name
+                                td= item.exam_note
+            else
+                p= results.message

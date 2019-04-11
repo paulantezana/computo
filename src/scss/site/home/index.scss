@@ -1,0 +1,42 @@
+.Slide{
+    background: $dark-bg;
+    color: $dark-color;
+    padding: 4rem 0;
+    text-align: center;
+    &-title{
+        color: white;
+        font-size: 2rem;
+    }
+    .Container{
+        max-width: 700px;
+    }
+}
+
+.Modules{
+    padding: 64px 0;
+    &-title{
+        padding: 8px 0 32px;
+        text-align: center;
+    }
+    &-list{
+        @extend %list;
+        justify-items: center;
+    }
+    &-item{
+        width: 120px;
+        height: 150px;
+        border: 1px solid $border-color;
+        background: $body-bg-alt;
+        border-radius: 4px;
+        padding: 16px 0 0 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        img{
+            display: block;
+            width: 64px;
+        }
+    }
+}

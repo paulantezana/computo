@@ -1,0 +1,22 @@
+.AdmissionMenu{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    a{
+        border-bottom: 2px solid transparent;
+        line-height: 3em;
+        display: block;
+        margin-right: 16px;
+        &:hover{
+            border-bottom: 2px solid $first-color;
+        }
+        color: $text-color;
+    }
+    &-container{
+        // background: $dark-bg;
+        border-bottom: 1px solid $border-color;
+    }
+}

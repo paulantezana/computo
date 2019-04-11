@@ -1,0 +1,94 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+::selection{
+    background: $first-color;
+    color: $first-color-inverse;
+}
+
+// body app styles
+body{
+    font-family: $body-font;
+    line-height: $body-line-height;
+    font-size: $normal-font-size;
+    color: $text-color;
+
+    background: $body-bg;
+    margin: 0;
+}
+
+// Heading titles
+h1,h2,h3,h4,h5,h6{
+    line-height: $heading-line-height;
+    font-family: $heading-font;
+}
+h1{
+    font-size: $h2-font-size;
+}
+h2{
+    font-size: $h2-font-size;
+}
+h3{
+    font-size: $h3-font-size;
+}
+
+// font family styles
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $body-font, sans-serif;
+}
+
+// multimedia styles
+video,img{
+    max-width : 100%;
+    height    : auto;
+    display: inline-block;
+}
+
+// link color
+a{
+    color: $color-6;
+    text-decoration: none;
+    &:hover{
+        color: $color-7;
+    }
+}
+
+// code app styles
+code,
+kbd{
+    //background-color: shade(white-ter);
+    //color: $red;
+    //font-size: 0.875em;
+    //font-weight: normal;
+    //padding: 0.25em 0.5em 0.25em;
+}
+
+// input styles
+input[type="checkbox"],
+input[type="radio"] {
+    vertical-align: baseline;
+}
+
+// Table styles
+table {
+    border-collapse: collapse;
+    td,
+    th {
+        text-align: left;
+        vertical-align: top;
+    }
+    th {
+        color: $text-color;
+    }
+}
+[class*="icon-"]::before{
+    position: relative;
+    top: 1.5px;
+}

@@ -1,0 +1,39 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700")
+        link(rel="stylesheet", href="https://file.myfontastic.com/BvJ9ZpkTzesj6MoByRLk3a/icons.css")
+        link(rel='stylesheet', href='/css/app.css')
+    body
+        .Site#Site
+            .Site-header
+                .TopBar
+                    .TopBar-content.Container ⏰ Desde el martes 9 de abril aprenderás cómo funcionan las redes.
+                header.Header.Container
+                    a(href="/").Header-branding
+                        img(src="/images/web.svg", alt="logo")
+                    .Header-nav
+                        #PrimaryMenu-toggle.Menu-toggle.icon-menu
+                        .PrimaryMenu-container
+                            #PrimaryMenu-close.icon-menu
+                            nav.PrimaryMenu-nav
+                                ul.Menu.PrimaryMenu#PrimaryMenu
+                                    li.Menu-item
+                                        a(href="/")
+                                            span Inicio
+                                    li.Menu-item
+                                        a(href="/procesos")
+                                            span Procesos
+                                    li.Menu-item
+                                        a(href="/consultas")
+                                            span Consultas
+                                    //- li.Menu-item
+                                    //-     a(href="/intranet")
+                                    //-         span Intranet
+            .Site-main
+                block content
+            .Site-footer
+                .Container
+                    | Computo
+        script(src="/app.js")
