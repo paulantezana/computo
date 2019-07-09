@@ -1,44 +1,49 @@
 extends layout
 block content
     section.Slide
-        .Container
+        img(src="/images/slide1.jpg", alt="").Slide-bg
+        .Container.Slide-data
+            img(src="/images/web.svg", alt="logo" width="80")
             h1.Slide-title Centro de Cómputos IESTP
-            p.Slide-content El Centro de Cómputos IESTP abre sus puertas a toda la comunidad del instituto y público en general a través de su portal web, asumiendo un nuevo desafío: brindar información para servir
+            p.Slide-text El Centro de Cómputos IESTP abre sus puertas a toda la comunidad del instituto y público en general a través de su portal web, asumiendo un nuevo desafío: brindar información para servir
     section.Instances
         .Container
             h2.Instances-title Instancias
-            .Instances-content.Grid.s-2.m-3.l-4
+            //- .Instances-left
+            //-     img(src="/images/architecture.svg", alt="")
+            .Instances-content
+                //- article.Instance
+                //-     img(src="/images/web.svg", alt="logo").Instance-img
+                //-     h3.Instance-title Api
                 article.Instance
-                    .Instance-header
-                        img(src="/images/web.svg", alt="logo")
-                        h3 Administrativo
-                        p.Instance-desc para todo el departamento academico de la institucion.
-                    .Instance-actions
-                        a(href="http://administracion.iestpvilcanota.com" target="_blanck").Button.primary Ingresar
+                    a(href="http://administracion.iestpvilcanota.com" target="_blanck").Instance-action
+                        img(src="/images/web.svg", alt="logo").Instance-img
+                        h3.Instance-title Web Site
                 article.Instance
-                    .Instance-header
-                        img(src="/images/web.svg", alt="logo")
-                        h3 Coordinador
-                        p.Instance-desc para todo los cordinadores de cada programa de estudios.
-                    .Instance-actions
-                        a(href="http://coordinador.iestpvilcanota.com" target="_blanck").Button.primary Ingresar
+                    a(href="http://administracion.iestpvilcanota.com" target="_blanck").Instance-action
+                        img(src="/images/web.svg", alt="logo").Instance-img
+                        h3.Instance-title Computo
                 article.Instance
-                    .Instance-header
-                        img(src="/images/web.svg", alt="logo")
-                        h3 Profesor
-                        p.Instance-desc Para todo los profesores que laboran en la institucion.
-                    .Instance-actions
-                        a(href="http://profesor.iestpvilcanota.com" target="_blanck").Button.primary Ingresar
+                    a(href="http://administracion.iestpvilcanota.com" target="_blanck").Instance-action
+                        img(src="/images/web.svg", alt="logo").Instance-img
+                        h3.Instance-title Admin
                 article.Instance
-                    .Instance-header
-                        img(src="/images/web.svg", alt="logo")
-                        h3 Alumno
-                        p.Instance-desc para todo los estudiantes postulantes, regulares y egresados.
-                    .Instance-actions
-                        a(href="http://alumno.iestpvilcanota.com" target="_blanck").Button.primary Ingresar
+                    a(href="http://profesor.iestpvilcanota.com" target="_blanck").Instance-action
+                        img(src="/images/web.svg", alt="logo").Instance-img
+                        h3.Instance-title Profesor
+                article.Instance
+                    a(href="http://alumno.iestpvilcanota.com" target="_blanck").Instance-action
+                        img(src="/images/student.svg", alt="logo").Instance-img
+                        h3.Instance-title Alumno
     section.BannerHome
-        .Container
-            img(src="/images/slide1.jpg", alt="banner")
+        .Container.Grid.m-2
+            .BannerHome-left
+                h2.BannerHome-title Sistema Institucional 
+                    div Web
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga quas dolore, minus adipisci suscipit veniam sit quis cupiditate corporis aspernatur, nulla nobis? A amet sed illo ratione impedit! Ipsum.
+                a(href="").Button.primary Documentacion
+            .BannerHome-right
+                img(src="/images/dashboard.png", alt="banner")
     section.Modules
         .Container
             h2.Modules-title Modulos
