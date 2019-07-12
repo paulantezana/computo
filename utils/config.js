@@ -18,17 +18,17 @@ module.exports = {
         // description: 'Sistema de emición de certificaciones modulares',
     },
 
-    // service : {
-    //     path: 'http://localhost:1323',
-    //     api_path: 'http://localhost:1323/api/v1/public',
-    //     socket: 'ws://localhost:1323/ws',
-    // },
-
     service : {
-        path: 'https://api.iestpvilcanota.com',
-        api_path: 'https://api.iestpvilcanota.com/api/v1/public',
-        socket: 'wss://api.iestpvilcanota.com/ws',
+        path: 'http://localhost:1323',
+        api_path: 'http://localhost:1323/api/v1/public',
+        socket: 'ws://localhost:1323/ws',
     },
+
+    // service : {
+    //     path: 'https://api.iestpvilcanota.com',
+    //     api_path: 'https://api.iestpvilcanota.com/api/v1/public',
+    //     socket: 'wss://api.iestpvilcanota.com/ws',
+    // },
 }
 
 

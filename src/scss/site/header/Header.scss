@@ -1,17 +1,17 @@
 .Site-header{
     background: $body-bg-alt;
-    box-shadow: 0 0 1px 1px rgba(20,23,28,0.1), 0 3px 1px 0 rgba(20,23,28,0.1);
+    // box-shadow: 0 0 1px 1px rgba(20,23,28,0.1), 0 3px 1px 0 rgba(20,23,28,0.1);
+    border-bottom: 1px solid $border-color;
     @media print {  display: none;  }
 }
 
 .Header{
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
     &-branding{
         display: flex;
         img{
-            margin: auto;
+            margin: 9px auto;
             height: 32px;
             width: auto;
         }

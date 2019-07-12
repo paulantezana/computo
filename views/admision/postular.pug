@@ -7,7 +7,7 @@ block content
             .SiteHeader
                 h1.SiteHeader-title Registro de postulante
                 .SiteHeader-subTitle Preinscripcion
-            form(action="").Form.horizontal#preAdmission
+            form(action="/admision/postular").Form.horizontal#preAdmission
                 .Form-item
                     label(for="dni").Form-label.required DNI
                     input(type="text" name="dni" required)#dni.Form-input

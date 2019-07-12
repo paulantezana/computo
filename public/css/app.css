@@ -510,8 +510,7 @@ table {
 
 .Site-header {
   background: #FFF;
-  -webkit-box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
-          box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1); }
+  border-bottom: 1px solid #EBECEE; }
   @media print {
     .Site-header {
       display: none; } }
@@ -522,14 +521,13 @@ table {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 8px 0; }
+          justify-content: space-between; }
   .Header-branding {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
     .Header-branding img {
-      margin: auto;
+      margin: 9px auto;
       height: 32px;
       width: auto; }
 
@@ -592,8 +590,11 @@ table {
   .PrimaryMenu a {
     color: #54575A; }
     .PrimaryMenu a:active, .PrimaryMenu a:hover {
-      color: #1890ff;
       background: #F9F9F9; }
+  .PrimaryMenu > li > a {
+    line-height: 50px;
+    height: 50px;
+    padding: 0 12px; }
   .PrimaryMenu .sub-menu {
     background: #FFFFFF;
     -webkit-box-shadow: 0 0 0 1px #EBECEE inset;
@@ -667,69 +668,6 @@ table {
     .BannerHome-title div {
       font-weight: bold; }
 
-.Instances {
-  padding: 64px 0; }
-  .Instances-title {
-    margin: 0 0 32px;
-    text-align: center; }
-  .Instances-content {
-    border: 1px solid white;
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    padding: 0;
-    list-style: none; }
-    .Instances-content > * {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin: -50px;
-      width: 100px;
-      height: 100px; }
-      .Instances-content > *:nth-of-type(1) {
-        -webkit-transform: rotate(0deg) translate(150px) rotate(0deg);
-                transform: rotate(0deg) translate(150px) rotate(0deg); }
-      .Instances-content > *:nth-of-type(2) {
-        -webkit-transform: rotate(72deg) translate(150px) rotate(-72deg);
-                transform: rotate(72deg) translate(150px) rotate(-72deg); }
-      .Instances-content > *:nth-of-type(3) {
-        -webkit-transform: rotate(144deg) translate(150px) rotate(-144deg);
-                transform: rotate(144deg) translate(150px) rotate(-144deg); }
-      .Instances-content > *:nth-of-type(4) {
-        -webkit-transform: rotate(216deg) translate(150px) rotate(-216deg);
-                transform: rotate(216deg) translate(150px) rotate(-216deg); }
-      .Instances-content > *:nth-of-type(5) {
-        -webkit-transform: rotate(288deg) translate(150px) rotate(-288deg);
-                transform: rotate(288deg) translate(150px) rotate(-288deg); }
-
-.Instance {
-  border-radius: 100%;
-  background: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center; }
-  .Instance-title {
-    font-weight: normal;
-    margin: 0;
-    font-size: 12px;
-    color: #54575A; }
-  .Instance-img {
-    width: 40px;
-    height: 40px; }
-
 .Modules {
   padding: 64px 0; }
   .Modules-title {
@@ -766,6 +704,91 @@ table {
     .Module-header img {
       display: block;
       width: 64px; }
+
+.Instances {
+  padding: 64px 0; }
+  .Instances-title {
+    font-weight: normal;
+    font-size: 2rem;
+    position: relative; }
+    .Instances-title:before {
+      position: absolute;
+      content: "";
+      top: -20px;
+      left: 0;
+      height: 3px;
+      width: 40px;
+      background: #1890ff; }
+    .Instances-title div {
+      font-weight: bold; }
+  .Instances-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .Instances-left-content {
+      border: 1px solid white;
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      padding: 0;
+      list-style: none; }
+      .Instances-left-content > * {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -50px;
+        width: 100px;
+        height: 100px; }
+        .Instances-left-content > *:nth-of-type(1) {
+          -webkit-transform: rotate(0deg) translate(150px) rotate(0deg);
+                  transform: rotate(0deg) translate(150px) rotate(0deg); }
+        .Instances-left-content > *:nth-of-type(2) {
+          -webkit-transform: rotate(72deg) translate(150px) rotate(-72deg);
+                  transform: rotate(72deg) translate(150px) rotate(-72deg); }
+        .Instances-left-content > *:nth-of-type(3) {
+          -webkit-transform: rotate(144deg) translate(150px) rotate(-144deg);
+                  transform: rotate(144deg) translate(150px) rotate(-144deg); }
+        .Instances-left-content > *:nth-of-type(4) {
+          -webkit-transform: rotate(216deg) translate(150px) rotate(-216deg);
+                  transform: rotate(216deg) translate(150px) rotate(-216deg); }
+        .Instances-left-content > *:nth-of-type(5) {
+          -webkit-transform: rotate(288deg) translate(150px) rotate(-288deg);
+                  transform: rotate(288deg) translate(150px) rotate(-288deg); }
+
+.Instance {
+  border-radius: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#096dd9), to(#40a9ff));
+  background: linear-gradient(#096dd9, #40a9ff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center; }
+  .Instance-title {
+    font-weight: normal;
+    margin: 0;
+    font-size: 12px;
+    color: white; }
+  .Instance-img {
+    width: 40px;
+    height: 40px; }
 
 .SiteTitle {
   margin: 32px 0; }

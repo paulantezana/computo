@@ -61,15 +61,15 @@
             color: $text-color;
             &:active,
             &:hover {
-                color: $color-6;
+                // color: $color-6;
                 background: $menu-hover-bg;
             }
         }
-        // & > li > a {
-        //     line-height: 50px;
-        //     height: 50px;
-        //     padding: 0 12px ;
-        // }
+        & > li > a {
+            line-height: 50px;
+            height: 50px;
+            padding: 0 12px ;
+        }
         .sub-menu {
             background: $first-color-inverse;
             box-shadow: 0 0 0 1px $border-color inset;

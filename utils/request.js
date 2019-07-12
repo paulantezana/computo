@@ -23,7 +23,7 @@ module.exports = (path, options) => {
 
     const url = service.api_path + path; // Formando la URL de la peticion
     // Realizando la peticion con los parametros pertinentes
-    console.log(url,newOptions,'SEND------');
+    console.log(url);
     return fetch(url,newOptions)
         .then(response => {
             return response.json(); // Return response

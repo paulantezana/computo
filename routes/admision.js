@@ -6,8 +6,14 @@ var async = require("express-async-await");
 const request = require("./../utils/request");
 
 /* GET home page. */
-router.get("/", function(req, res, next) {
-    res.render("admision/index", { title: "Express" });
+router.get("/", async function(req, res, next) {
+    const preAdmission = await request(`/admission/pre/admission/get`, {
+        method: "POST",
+    });
+    
+    res.render("admision/index", { 
+        title: "Express", preAdmission 
+    });
 });
 
 // ========================================================
@@ -42,7 +48,8 @@ router.get("/resultados/:setting_id/:program_id", async function(req, res, next)
 
 // ========================================================
 // Postualar
-router.get("/postular", async function(req, res, next) {
+router.get("/postular/:id", async function(req, res, next) {
+
     res.render("admision/postular", { title: "Express" });
 });
 
