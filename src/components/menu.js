@@ -1,4 +1,14 @@
-let SNMenu = ({
+export const SNActiveMenu = (links = []) => {
+    if (links) {
+        links.map(link => {
+            const url = document.location.href;
+            if (link.href === url || link.href === url.slice(0, -1))
+                link.parentNode.classList.add('is-active');
+        });
+    }
+}
+
+export const SNMenu = ({
     menuId = "Menu",
     toggleButtonID = "Menu-toggle",
     contextId = "Site",
@@ -35,14 +45,7 @@ let SNMenu = ({
     }
 
     // Agregar la clase active en los enlaces
-    const links = [...menuEl.querySelectorAll('a')];
-    if (links) {
-        links.map(link => {
-            const url = document.location.href;
-            if (link.href === url || link.href === url.slice(0, -1))
-                link.parentNode.classList.add('is-active');
-        });
-    }
+    SNActiveMenu([...menuEl.querySelectorAll('a')]);
 
     // Toggle Menu
     let button = document.getElementById(toggleButtonID);
@@ -73,5 +76,3 @@ let SNMenu = ({
         })
     }
 };
-
-export default SNMenu;

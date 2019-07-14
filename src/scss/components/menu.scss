@@ -9,7 +9,6 @@
         li ul{
             max-height: 0;
             overflow: hidden;
-            transition: all .4s;
         }
     }
 
@@ -59,7 +58,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: .4s all;
             .Toggle{
                 display: block;
                 padding: 0 12px;
@@ -72,9 +70,5 @@
         @include from($bp){display: none}
         @media print {  display: none;  }
         cursor: pointer;
-    }
-
-    #{$menu-class}{
-        transition: all .4s;
     }
 }

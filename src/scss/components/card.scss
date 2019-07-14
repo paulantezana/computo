@@ -1,5 +1,6 @@
 .Card{
     padding: 1rem;
-    background: $body-bg-alt;
-    border: 1px solid $border-color;
+    background: var(--snColorBgAlt);
+    border: 1px solid var(--snColorBorder);
+    display: block;
 }

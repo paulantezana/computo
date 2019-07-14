@@ -8,15 +8,15 @@ block content
         #AdmissionSlide
             .Slide-item
                 img(src="/images/slide1.jpg", alt="")
-            .Slide-item 2
+            .Slide-item
                 img(src="/images/slide2.jpg", alt="")
-        .Admision.Grid.s-2.m-3
-            .Admision-item
+        .Admision
+            .Admision-header
                 h3 Calendario de actividades
             if preAdmission.success
-                .Admision-item
+                .Admision-content.Grid.s-2.m-3
                     each item, index in preAdmission.data
-                        a(href="/admision/postular/"+item.id)
+                        a(href="/admision/postular/"+item.id).Card
                             h4= item.pre_description
                             p Pre-Inscripciones desde el 
                                 span= item.pre_start_date

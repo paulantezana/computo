@@ -62,7 +62,7 @@ $color-10:$blue-10;
 $border-color: #EBECEE;
 $text-color: #54575A;
 $text-color-alt: #97999B;
-$body-bg: #FAFAFA;
+$body-bg: #ffffff;
 $body-bg-alt: #FFF;
 
 // Darck
@@ -85,3 +85,38 @@ $footer-color: $dark-color;
 // Top Bar
 $topBar-bg: $gold-6;
 $topBar-color: $gold-1;
+
+
+:root{
+    --snColor1: #1890ff;
+    --snColor1Inverse: #FFFFFF;
+    --snColor1Light: #40a9ff;
+    --snColor1Dark: #096dd9;
+    
+    // second color
+    --snColor2: #faad14;
+    --snColor2Inverse: #FFFFFF;
+
+    // Colores que se usaran en los estados del calendario
+    --snError: #D73553;
+    --snSuccess: #31B243;
+    --snWarning: #FFC200;
+    --snDisable: #d9d9d9;
+
+    // Colores de fondo
+    --snColorBg: #FFFFFF;
+    --snColorBgAlt: #FFFFFF;
+    --snColorHover: #0000000d;
+
+    // Colores de texto
+    --snColorText: rgb(93, 93, 93);
+    --snColorTextAlt: rgb(202, 202, 202);
+
+    // Color del borde de forma general
+    --snColorBorder: #DFE2E2;
+
+    // Darck styles
+    --snColorDark: hsl(207, 30%, 17%);
+    --snColorDarkAlt: hsl(208, 29%, 10%);
+    --snColorDarkInverse: hsl(210, 6%, 93%);
+}

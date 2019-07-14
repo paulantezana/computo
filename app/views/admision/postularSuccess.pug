@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    include blocks/menu
+    .Container
+        .SnMt16
+            if preAdmission.success
+                p.SnAlert.success= preAdmission.message
+                ul.SnList
+                    li Nombre de usuario 
+                        span= preAdmission.data.user.user_name
+                    li Email 
+                        span= preAdmission.data.user.email
+                    li DNI 
+                        span= preAdmission.data.student.dni
+                    li Nombre completo 
+                        span= preAdmission.data.student.full_name
+                    li Sexo 
+                        span= preAdmission.data.student.gender
+            else
+                p.SnAlert.error= preAdmission.message

@@ -4,14 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var admisionsRouter = require('./routes/admision');
+var indexRouter = require('./app/routes/index');
+var usersRouter = require('./app/routes/users');
+var admisionsRouter = require('./app/routes/admision');
+var matriculaRouter = require('./app/routes/matricula');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/admision', admisionsRouter);
+app.use('/matricula', matriculaRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

@@ -1,32 +1,32 @@
-@mixin onCircle($item-count, $circle-size, $item-size) {  
-    position: relative;
-    width:  $circle-size;
-    height: $circle-size;
-    border-radius: 50%;
-    padding: 0; 
-    list-style: none;
+// @mixin onCircle($item-count, $circle-size, $item-size) {  
+//     position: relative;
+//     width:  $circle-size;
+//     height: $circle-size;
+//     border-radius: 50%;
+//     padding: 0; 
+//     list-style: none;
     
-    > * {
-        display: block;
-        position: absolute;
-        top:  50%; 
-        left: 50%;
-        margin: -($item-size / 2);
-        width:  $item-size;
-        height: $item-size;
+//     > * {
+//         display: block;
+//         position: absolute;
+//         top:  50%; 
+//         left: 50%;
+//         margin: -($item-size / 2);
+//         width:  $item-size;
+//         height: $item-size;
         
-        $angle: (360 / $item-count);
-        $rot: 0;
+//         $angle: (360 / $item-count);
+//         $rot: 0;
 
-        @for $i from 1 through $item-count {
-            &:nth-of-type(#{$i}) {
-                transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
-            }
+//         @for $i from 1 through $item-count {
+//             &:nth-of-type(#{$i}) {
+//                 transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
+//             }
 
-            $rot: $rot + $angle;
-        }
-    }
-}
+//             $rot: $rot + $angle;
+//         }
+//     }
+// }
   
 
 .Slide {
@@ -41,7 +41,7 @@
     color: $dark-color;
     // height: 350px;
     position: relative;
-    padding: 4rem 0;
+    padding: 5rem 0;
     text-align: center;
     &-bg{
         width: 100%;
@@ -68,7 +68,9 @@
 
 .BannerHome{
     padding: 32px 0;
-    background: $body-bg-alt;
+    background: var(--snColorDark);
+    color: var(--snColorDarkInverse);
+
     &-left{
         display: flex;
         flex-direction: column;
@@ -94,35 +96,57 @@
     }
 }
 
-.Modules{
-    // background: $body-bg-alt;
-    padding: 64px 0;
+.SnVideoOverlayBtn{
+    background: var(--snColor1);
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    cursor: pointer;
+    margin: 3rem auto auto;
+    animation: pulseBorder 1500ms ease-out infinite;
+    &::before{
+        content: "";
+        display: block;
+        border-left: 27px solid white;
+        border-top: 17px solid transparent;
+        border-bottom: 17px solid transparent;
 
-
-    &-title {
-        margin: 0 0 32px;
-        text-align: center;
+        position: relative;
+        z-index: 3;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-30%, -50%);
+    }
+    @keyframes pulseBorder {
+        0% {
+            box-shadow: 0 0 0 0 var(--snColor1);
+        }
+        100% {
+            box-shadow: 0 0 0 15px transparent;
+        }
     }
 }
 
-.Module{
-    min-height: 200px;
-    border: 1px solid $border-color;
-    background: $body-bg-alt;
-    padding: 32px 16px 16px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        img {
-            display: block;
-            width: 64px;
-        }
+.SnVideoOverlay{
+    position: fixed;
+    z-index: 999;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    padding: 1rem;
+    &.show{
+        background: rgba(#000,.5);
+        opacity: 1;
+        pointer-events: all;
+    }
+    &-content{
+        margin: auto;
+        max-width: 600px;
     }
 }
 

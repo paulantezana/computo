@@ -5,18 +5,29 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    .is-active{
+        a{
+            border-bottom: 2px solid $first-color;
+        }
+    }
     a{
         border-bottom: 2px solid transparent;
         line-height: 3em;
         display: block;
         margin-right: 16px;
+        display: flex;
+        align-items: center;
         &:hover{
             border-bottom: 2px solid $first-color;
         }
         color: $text-color;
     }
+    svg{
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+    }
     &-container{
-        // background: $dark-bg;
         border-bottom: 1px solid $border-color;
     }
 }

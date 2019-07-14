@@ -11,6 +11,9 @@
 @import "components/table";
 @import "components/button";
 @import "components/margin";
+@import "components/alert";
+@import "components/list";
+@import "components/video";
 
 @include sn-menu();
 
@@ -20,8 +23,9 @@
 @import "site/header/index";
 @import "site/footer";
 @import "site/home/index";
+@import "site/home/modules";
 @import "site/siteTitle";
-// @import "site/excerpt";
+@import "site/slide";
 // @import "site/siteHeader";
 @import "site/admission/index";
 

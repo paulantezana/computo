@@ -1,0 +1,28 @@
+.Modules{
+    padding: 64px 0;
+    &-title {
+        margin: 0 0 32px;
+        text-align: center;
+    }
+}
+
+.Module{
+    min-height: 200px;
+    border: 1px solid $border-color;
+    background: $body-bg-alt;
+    padding: 32px 16px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        img {
+            display: block;
+            width: 64px;
+        }
+    }
+}

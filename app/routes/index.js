@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const { Home } = require('../controllers/home');
+
+router.get('/', Home);
 
 router.get('/procesos', function(req, res, next) {
   res.render('procesos', { title: 'Express' });
