@@ -2,6 +2,7 @@ import './scss/app.scss';
 import { SNMenu, SNActiveMenu } from './components/menu';
 import { tns } from 'tiny-slider/src/tiny-slider.module';
 import { SnVideoOverlay } from './components/overlay';
+import { SnModal } from './components/modal';
 
 import 'tiny-slider/src/tiny-slider.scss';
 
@@ -13,6 +14,12 @@ SNMenu({
     parentClose: true,
     menuCloseID: 'PrimaryMenu-close',
 });
+
+// Modal
+SnModal();
+window.onload = ()=>{
+    modal.init();
+}
 
 // Video overlay
 SnVideoOverlay();

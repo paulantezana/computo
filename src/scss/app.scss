@@ -14,6 +14,7 @@
 @import "components/alert";
 @import "components/list";
 @import "components/video";
+@import "components/modal";
 
 @include sn-menu();
 
@@ -26,7 +27,7 @@
 @import "site/home/modules";
 @import "site/siteTitle";
 @import "site/slide";
-// @import "site/siteHeader";
+@import "site/siteHeader";
 @import "site/admission/index";
 
 

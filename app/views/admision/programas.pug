@@ -2,7 +2,21 @@ extends ../layout
 
 block content
     include blocks/menu
-    .Container
-        .SiteHeader
-            h1.SiteHeader-title Programas de estudio
-            .SiteHeader-subTitle Programas de estudio en toda las filiales
+    .SiteHeader
+        h1.SiteHeader-title Programas de estudio
+        .SiteHeader-subTitle Programas de estudio en toda las filiales
+    .Container.SnMt32.SnMb32
+            if subsidiaries.success
+                .Admision-content.Grid.m-2.l-3
+                    each item, index in subsidiaries.data
+                        .Card
+                            .Card-body
+                                h2.Card-title= 'Filial - ' + item.name
+                                ul
+                                each program, i in item.programs
+                                    li= program.name
+                                //- p= item.description
+            else
+                p= subsidiaries.message
+
+            

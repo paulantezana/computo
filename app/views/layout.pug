@@ -1,8 +1,12 @@
+- let servicePath = 'http://localhost:1323'
 doctype html
 html
     head
+        meta(charset="UTF-8")
         title= title
-        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700")
+        meta(name="description" content= description ? description : '' )
+
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap")
         link(rel="stylesheet", href="https://file.myfontastic.com/BvJ9ZpkTzesj6MoByRLk3a/icons.css")
         link(rel='stylesheet', href='/css/app.css')
     body

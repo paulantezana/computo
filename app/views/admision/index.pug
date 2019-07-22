@@ -2,26 +2,49 @@ extends ../layout
 
 block content
     include blocks/menu
-    .Container
-        .SiteTitle
-            h1.SiteTitle-title Admisión
-        #AdmissionSlide
-            .Slide-item
-                img(src="/images/slide1.jpg", alt="")
-            .Slide-item
-                img(src="/images/slide2.jpg", alt="")
+    //- .SiteHeader
+    //-     h1.SiteHeader-title Admisión
+    //-     .SiteHeader-subTitle Proceso de admisión
+    #AdmissionSlide
+        .Slide-item
+            img(src="/images/slide1.jpg", alt="")
+        .Slide-item
+            img(src="/images/slide2.jpg", alt="")
+    .Container.SnMt32.SnMb32
         .Admision
-            .Admision-header
-                h3 Calendario de actividades
+            h1 Admisión
             if preAdmission.success
                 .Admision-content.Grid.s-2.m-3
+                    .Card
+                        .Card-body
+                            h3.Card-title PROCEDIMIENTO
+                            p.Card-description Procedimiento de Inscripción para postular 
+                    .Card
+                        .Card-body
+                            h3.Card-title RECOMENDACIONES
+                            p.Card-description Recomendaciones para el postulante 
+                    .Card
+                        .Card-body
+                            h3.Card-title PROSPECTO DE ADMISÍON
+                            p.Card-description Prospecto para admission 2020 
+                    .Card
+                        .Card-body
+                            h3.Card-title CUADRO DE VACANTES 2019
+                            p.Card-description Lista de vacantes
+                    .Card
+                        .Card-body
+                            h3.Card-title CALENDARIO DE ACTIVIDADES
+                            p.Card-description Actividades
+                    .Card
+                        .Card-body
+                            h3.Card-title DISTRIBUCIÓN DE PREGUNTAS
+                            p.Card-description preguntas del examen
                     each item, index in preAdmission.data
-                        a(href="/admision/postular/"+item.id).Card
-                            h4= item.pre_description
-                            p Pre-Inscripciones desde el 
-                                span= item.pre_start_date
-                                |  al 
-                                span= item.pre_end_date
+                        .Card
+                            .Card-body
+                                h3.Card-title= item.pre_title
+                                p.Card-description= item.pre_short_description
+                                a(href="/admision/postular/"+item.id).SnBtn.SnMt16 Postular
             else
                 p= preAdmission.message
 

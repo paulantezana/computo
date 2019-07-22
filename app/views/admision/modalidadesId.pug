@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    include blocks/menu
+    if modality.success
+        .SiteHeader
+            h1.SiteHeader-title= modality.data.name
+            .SiteHeader-subTitle modalidad
+        .Container.SnMt32.SnMb32
+            p= modality.data.description
+    else
+        p= modality.message

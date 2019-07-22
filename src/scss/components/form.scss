@@ -1,6 +1,6 @@
 @mixin StandardFormItem{
     &.hidden {
-        display: none;
+        display: none !important;
     }
     margin-bottom: 16px;
 }

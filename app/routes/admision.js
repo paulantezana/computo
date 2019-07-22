@@ -5,6 +5,7 @@ const {
     Programas,
     Estadisticas,
     Modalidades,
+    ModalidadesId,
     Home,
     Resultados,
     ResultadosId,
@@ -17,6 +18,7 @@ router.get("/", Home);
 router.get("/estadisticas", Estadisticas);
 router.get("/programas", Programas);
 router.get("/modalidades", Modalidades);
+router.get("/modalidades/:id", ModalidadesId);
 
 // ========================================================
 // Resulatdos de exemenes de admision

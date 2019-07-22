@@ -2,53 +2,55 @@ extends ../layout
 
 block content
     include blocks/menu
-    .Container
+
+    if preAdmission.success
         .SiteHeader.SnMb32
-            h1.SiteHeader-title Registro de postulante
-            .SiteHeader-subTitle Preinscripcion
-        div
-            div
-            div
-                if preAdmission.success
-                    form(action="/admision/postular" method="POST").SnForm.horizontal#preAdmission
-                        .SnForm-item.required
-                            label(for="id").SnForm-label ID
-                            input(type="text" name="id" value=preAdmission.data.id required)#dni.SnForm-input
-                        .SnForm-item.required
-                            label(for="dni").SnForm-label DNI
-                            input(type="text" name="dni" required)#dni.SnForm-input
-                        .SnForm-item.required
-                            label(for="full_name").SnForm-label Apellidos y Nombres
-                            input(type="text" name="full_name" required)#full_name.SnForm-input
-                        .SnForm-item.required
-                            label(for="birth_date").SnForm-label Fecha de nacimiento
-                            input(type="date" name="birth_date" required)#birth_date.SnForm-input
-                        .SnForm-item.required
-                            label(for="email").SnForm-label Email
-                            input(type="email" name="email" required)#email.SnForm-input
-                        .SnForm-item.required
-                            div.SnForm-label Sexo
-                            label(for="genderF")
-                                input#genderF(type="radio", name="gender" value="F")
-                                | Femenino
-                            label(for="genderM")
-                                input#genderM(type="radio", name="gender" value="M")
-                                | Masculino
-                        .SnForm-item
-                            label(for="birth_place").SnForm-label Lugar de nacimiento
-                            input(type="text" name="birth_place")#birth_place.SnForm-input
-                        .SnForm-item
-                            label(for="district").SnForm-label Distrito
-                            input(type="text" name="district")#district.SnForm-input
-                        .SnForm-item
-                            label(for="province").SnForm-label Provincia
-                            input(type="text" name="province")#province.SnForm-input
-                        .SnForm-item
-                            label(for="region").SnForm-label Región
-                            input(type="text" name="region")#region.SnForm-input
-                        .SnForm-item
-                            .SnForm-left
-                            .SnForm-right
-                                button(type="submit").SnBtn.primary Enviar
-                else
-                    p= preAdmission.message
+            h1.SiteHeader-title= preAdmission.data.pre_title
+            .SiteHeader-subTitle= preAdmission.data.pre_short_description
+        .Container
+            p= preAdmission.data.pre_description
+            form(action="/admision/postular" method="POST").SnForm.SnMt64.SnMb64#preAdmission
+                .SnForm-item.required.hidden
+                    label(for="id").SnForm-label ID
+                    input(type="text" name="id" value=preAdmission.data.id required)#dni.SnForm-input
+                .Grid.m-2
+                    .SnForm-item.required
+                        label(for="dni").SnForm-label DNI
+                        input(type="text" name="dni" required)#dni.SnForm-input
+                    .SnForm-item.required
+                        label(for="full_name").SnForm-label Apellidos y Nombres
+                        input(type="text" name="full_name" required placeholder="ANTEZANA YANA, Paul Yoel")#full_name.SnForm-input
+                .Grid.m-2
+                    .SnForm-item.required
+                        label(for="birth_date").SnForm-label Fecha de nacimiento
+                        input(type="date" name="birth_date" required)#birth_date.SnForm-input
+                    .SnForm-item.required
+                        label(for="email").SnForm-label Email
+                        input(type="email" name="email" required placeholder="ejemplo@ejemplo.com")#email.SnForm-input
+                .Grid.m-2
+                    .SnForm-item.required
+                        div.SnForm-label Sexo
+                        label(for="genderF")
+                            input#genderF(type="radio", name="gender" value="F")
+                            | Femenino
+                        label(for="genderM")
+                            input#genderM(type="radio", name="gender" value="M")
+                            | Masculino
+                    .SnForm-item
+                        label(for="birth_place").SnForm-label Lugar de nacimiento
+                        input(type="text" name="birth_place")#birth_place.SnForm-input
+                .Grid.m-2.l-3
+                    .SnForm-item
+                        label(for="district").SnForm-label Distrito
+                        input(type="text" name="district")#district.SnForm-input
+                    .SnForm-item
+                        label(for="province").SnForm-label Provincia
+                        input(type="text" name="province")#province.SnForm-input
+                    .SnForm-item
+                        label(for="region").SnForm-label Región
+                        input(type="text" name="region")#region.SnForm-input
+                .SnForm-item
+                    button(type="submit").SnBtn.primary.block Postular
+    else
+        .Container
+            p= preAdmission.message

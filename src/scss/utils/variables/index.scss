@@ -23,8 +23,9 @@ $sizes: map-keys($breakpoints);
 
 //
 $transition-duration: .4s;
-$heading-font: Ubuntu, sans-serif;
-$body-font: Ubuntu, sans-serif;
+$heading-font: Roboto, sans-serif;
+$heading-font-weight: 500;
+$body-font: Roboto, sans-serif;
 
 $h1-font-size: 1.8rem;
 $h2-font-size: 1.5rem;

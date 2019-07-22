@@ -12,31 +12,36 @@ const Home = async (req, res, next) => {
 }
 
 const Programas = async (req, res, next) => {
-    // const setting = await request('/setting', {
-    //     method: "GET",
-    // });
-    // let title = setting.success ? `${setting.data.prefix_short_name} ${setting.data.institute}` : 'institute';
+    const subsidiaries = await request('/subsidiaries/detail', {
+        method: "GET",
+    });
 
-    res.render('admision/programas', { title: 'setting' });
+    res.render('admision/programas', { title: 'setting', subsidiaries });
 }
 
 const Estadisticas = async (req, res, next) => {
-    // const setting = await request('/setting', {
-    //     method: "GET",
-    // });
-    // let title = setting.success ? `${setting.data.prefix_short_name} ${setting.data.institute}` : 'institute';
-
     res.render('admision/estadisticas', { title: 'setting' });
 }
 
 const Modalidades = async (req, res, next) => {
-    // const setting = await request('/setting', {
-    //     method: "GET",
-    // });
-    // let title = setting.success ? `${setting.data.prefix_short_name} ${setting.data.institute}` : 'institute';
+    const modalities = await request('/admission/modalities', {
+        method: "GET",
+    });
 
-    res.render('admision/modalidades', { title: 'setting' });
+    res.render('admision/modalidades', { title: 'Modalidades', modalities });
 }
+
+const ModalidadesId = async (req, res, next) => {
+    const modality = await request(`/admission/modalities/by/id`, {
+        method: "POST",
+        body: {
+            id: parseInt(req.params.id),
+        }
+    });
+
+    res.render('admision/modalidadesId', { title: 'Modalidades', modality });
+}
+
 
 const Resultados = async (req, res, next) => {
     const results = await request(`/admission/results`, {
@@ -105,6 +110,7 @@ module.exports = {
     Programas,
     Estadisticas,
     Modalidades,
+    ModalidadesId,
     Home,
     Resultados,
     ResultadosId,

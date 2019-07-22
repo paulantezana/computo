@@ -2,7 +2,17 @@ extends ../layout
 
 block content
     include blocks/menu
-    .Container
-        .SiteHeader
-            h1.SiteHeader-title Modalidades
-            .SiteHeader-subTitle Modalidades de admision
+    .SiteHeader
+        h1.SiteHeader-title Modalidades
+        .SiteHeader-subTitle Modalidades de admision
+    .Container.SnMt32.SnMb32
+        if modalities.success
+            .Admision-content.Grid.m-2.l-3
+                each item, index in modalities.data
+                    .Card
+                        .Card-body
+                            h2.Card-title= item.name
+                            p= item.short_description
+                            a(href= "/admision/modalidades/" + item.id) Seguir leendo
+        else
+            p= modalities.message
