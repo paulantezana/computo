@@ -16,7 +16,7 @@
     "express-async-await": "^1.1.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^3.1.1",
     "pug": "2.0.0-beta11",
     "tiny-slider": "^2.9.2"
   },
